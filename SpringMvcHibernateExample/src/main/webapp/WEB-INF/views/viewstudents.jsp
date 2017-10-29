@@ -132,8 +132,7 @@ $(document).ready(function() {
     				data = response.data;
     				console.log("SUCCESS: ", data);
     				
-    				alert(response.data[0].enrollmentNumber);
-    				$('.tr').remove();
+    				//$('.tr').remove();
     				for(i=0;i<response.data.length;i++){
     					   					    					
     					$("#example tbody").append("<tr><td> "+response.data[i].enrollmentNumber+"</td><td> "+response.data[i].firstName+"</td><td>"+response.data[i].address+"</td><td>"+response.data[i].phoneNumber+"</td><td>"+response.data[i].dateOfJoining+"</td><td>"+response.data[i].qualification+"</td></tr>");
