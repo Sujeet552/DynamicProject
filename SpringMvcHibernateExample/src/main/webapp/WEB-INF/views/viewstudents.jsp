@@ -106,7 +106,6 @@
                 <th>Qualification</th>
             </tr>
         </tfoot>
-        <tbody> </tbody>
         
     </table>
             <!-- /.row -->
@@ -118,11 +117,13 @@
 	
 	
 $(document).ready(function() {
-	loadStudentData();
-    $('#example').DataTable();
+	
+   // $('#example').DataTable();
+    var t = $('#example').DataTable();
+    loadStudentData(t);
 } );
 
- loadStudentData=function(){
+ loadStudentData=function(t){
 	        data="";
     	   	//alert(document.getElementById("search").value);		
     		$.ajax({
@@ -132,10 +133,18 @@ $(document).ready(function() {
     				data = response.data;
     				console.log("SUCCESS: ", data);
     				
-    				//$('.tr').remove();
+    				//alert(response.data[0].enrollmentNumber);
+    				$('.tr').remove();
     				for(i=0;i<response.data.length;i++){
-    					   					    					
-    					$("#example tbody").append("<tr><td> "+response.data[i].enrollmentNumber+"</td><td> "+response.data[i].firstName+"</td><td>"+response.data[i].address+"</td><td>"+response.data[i].phoneNumber+"</td><td>"+response.data[i].dateOfJoining+"</td><td>"+response.data[i].qualification+"</td></tr>");
+    					t.row.add( [
+    					            response.data[i].enrollmentNumber,
+    					            response.data[i].firstName +" "+response.data[i].lastname,
+    					            response.data[i].address,
+    					            response.data[i].phoneNumber,
+    					            response.data[i].dateOfJoining,
+    					            response.data[i].qualification
+    					        ] ).draw( false );
+    					
     				}
     				
     			}
