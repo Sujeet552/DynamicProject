@@ -23,15 +23,23 @@ public class AddStudentController {
 		System.out.println("hi AddStudent");
 		System.out.println(AddStud);
 		
+		ModelAndView mav = new ModelAndView("admissionsuccess");
+		
 		if(userService.saveStudent(AddStud)){
 			
 			System.out.println("Record Saved successfully !!!");
+			mav.addObject("msg","Record has been inserted successfully to the database with Enrollment Number: "+AddStud.getEnrollmentNumber()+" !!!");
+			//mav.addObject("enrollmentId",AddStud.getEnrollmentNumber());
+			
 		}else{
 			
-			System.out.println("Sorry... Record not Saved !!!");
+			System.out.println("Record has not been saved due to invalid data entry. !!!");
+			mav.addObject("msg","Record has not been saved due to invalid data entry. !!!");
+			
 		}
 		
-		return new ModelAndView("welcome","","");
+		
+		return mav;
 	}
 	
 

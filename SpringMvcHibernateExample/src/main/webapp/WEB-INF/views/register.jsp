@@ -92,8 +92,8 @@
 								<input type="text" name="ID" id="ID" class="form-control" value="${SerialNo}" readonly>
 							</div>
 							<div class="col-sm-4 form-group">
-								<label>Enrollment Number</label>
-								<input type="text" name="EnrollmentNumber" id="EnrollmentNumber" class="form-control" readonly>
+								<label class="sr-only">Enrollment Number</label>
+								<input type="hidden" name="EnrollmentNumber" id="EnrollmentNumber" class="form-control" readonly>
 							</div>
 							<div class="col-sm-4 form-group">
 								<label>Current Date</label>
@@ -169,6 +169,14 @@
 	 
 	 
 <script type="text/javascript">
+
+
+$(document).ready(function() {	
+	//alert("working");
+    function disableBack() { window.history.forward() }
+    window.onload = disableBack();
+    window.onpageshow = function(evt) { if (evt.persisted) disableBack() }
+});
 
 onsubmit = function(){
 	
