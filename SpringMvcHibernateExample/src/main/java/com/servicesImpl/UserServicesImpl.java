@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 
 import com.dao.UserDao;
 import com.entities.AddStudentEntity;
+import com.entities.FeesEntity;
 import com.entities.Login;
 //import com.entities.Login;
 import com.entities.User;
@@ -52,7 +53,10 @@ public class UserServicesImpl implements UserServices{
 	{
 		return userDao.saveStudent(addStud);
 	}
-	
+	public boolean saveStudentFee(FeesEntity addFee)
+	{
+		return userDao.saveStudentFee(addFee);
+	}
 	
 	
 	public List<AddStudentEntity> NextEnrollmentNum(){

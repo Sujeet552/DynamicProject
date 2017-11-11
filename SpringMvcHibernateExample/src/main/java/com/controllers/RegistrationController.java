@@ -84,7 +84,7 @@ public class RegistrationController {
  		    map.put("status", "200");
  		    map.put("message", "Data found.");
  		    map.put("data",list);
- 		    System.out.println(map);
+ 		    //System.out.println(map);
  		}else{
  			
  			map.put("status", "404");

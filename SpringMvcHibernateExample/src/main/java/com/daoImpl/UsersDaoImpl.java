@@ -90,13 +90,26 @@ public class UsersDaoImpl implements UserDao{
  	  
  	 public boolean saveStudent(AddStudentEntity addStud)
  	 {
+ 		
  		//System.out.println("saveOrUpdate is working");
     	session.getCurrentSession().save(addStud);
+    		
 		return true;
     			
  		
  	 }
    
+ 	 public boolean saveStudentFee(FeesEntity AddFee)
+ 	 {
+ 	
+ 		//System.out.println("saveOrUpdate is working");
+    	session.getCurrentSession().save(AddFee);
+    	
+		return true;
+    			
+ 		
+ 	 }
+    
  	 
  	public List<AddStudentEntity> NextEnrollmentNum(){
  		

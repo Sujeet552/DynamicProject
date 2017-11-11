@@ -80,84 +80,50 @@
     </nav>
 <div id="page-wrapper">
     <div class="container-fluid">
-    <h1 class="well">Registration Form</h1>
+    <h1 class="well">Fees Detail</h1>
 	<div class="col-lg-12 well">
 	<div class="row">
-				<form action="AddStudent" method="post">
+				<form action="AddAll" method="post">
 					<div class="col-sm-12">
 					
 					     <div class="row">
+							
 							<div class="col-sm-4 form-group">
-								<label>Serial Number</label>
-								<input type="text" name="ID" id="ID" class="form-control" value="${SerialNo}" readonly>
+								<label>Student Enrollment Number</label>
+								<input type="text" name="EnrollmentNumber" id="EnrollmentNumber" value="${EnrollmentNumber}" class="form-control" readonly>
 							</div>
-							<div class="col-sm-4 form-group">
-								<label class="sr-only">Enrollment Number</label>
-								<input type="hidden" name="EnrollmentNumber" id="EnrollmentNumber" class="form-control" readonly>
-							</div>
+							
 							<div class="col-sm-4 form-group">
 								<label>Current Date</label>
-								<input type="text" name="DateOfJoining" value="${localDate}" class="form-control" readonly>
+								<input type="text" name="paymentDate" value="${localDate}" class="form-control" readonly>
 							</div>
 						</div>	
 						
 						<div class="row">
 							<div class="col-sm-4 form-group">
-								<label>First Name</label>
-								<input type="text" name="FirstName" id="FirstName" placeholder="Enter First Name Here.." class="form-control">
+								<label>Current Payment Amount</label>
+								<input type="text" name="paidAmount" id="paidAmount" placeholder="Enter current amount..." class="form-control">
 							</div>
+							
 							<div class="col-sm-4 form-group">
-								<label>Middle Name</label>
-								<input type="text" name="MiddleName" placeholder="Enter Middle Name Here.." class="form-control">
+								<label class="sr-only">Recipt Number</label>
+								<input type="hidden" name="reciptNum" id="reciptNum" class="form-control" value="0" readonly>
 							</div>
+							
+					  </div>					
+					
+					<div class="row">
+							
 							<div class="col-sm-4 form-group">
-								<label>Last Name</label>
-								<input type="text" name="Lastname" placeholder="Enter Last Name Here.." class="form-control">
+								<label>Total Fees</label>
+								<input type="text" name="totalfees" id="totalfees"  class="form-control">
 							</div>
-						</div>					
-						<div class="form-group">
-							<label>Address</label>
-							<textarea name="Address" placeholder="Enter Address Here.." rows="3" class="form-control"></textarea>
-						</div>	
-						<div class="row">
-							<div class="col-sm-4 form-group">
-								<label>City</label>
-								<input type="text" name="City" placeholder="Enter City Name Here.." class="form-control">
-							</div>	
-							<div class="col-sm-4 form-group">
-								<label>State</label>
-								<input type="text" name="State" placeholder="Enter State Name Here.." class="form-control">
-							</div>	
-							<div class="col-sm-4 form-group">
-								<label>Zip</label>
-								<input type="text" name="Zip" placeholder="Enter Zip Code Here.." class="form-control">
-							</div>		
-						</div>
-					<div class="form-group">
 							
-								<label>Qualification</label>
-								<input type="text" name="Qualification" placeholder="Enter Qualification Here.." class="form-control">
-							
-				
-					</div>	
-					<div class="form-group">
-							
-								<label>Course</label>
-								<input type="text" name="Course" placeholder="Enter Course name Here.." class="form-control">		
-				
-					</div>		
-										
-					<div class="form-group">
-						<label>Phone Number</label>
-						<input type="text" name="PhoneNumber" placeholder="Enter Phone Number Here.." class="form-control">
-					</div>		
-					<div class="form-group">
-						<label>Email Address</label>
-						<input type="text" name="EmailAddress" placeholder="Enter Email Address Here.." class="form-control">
-					</div>						
+						</div>		
+											
 			
 				
-					<button type="submit" onclick="onsubmit()" class="btn btn-lg btn-info" >Submit</button>					
+					<button type="submit"  class="btn btn-lg btn-info" >Submit</button>					
 					</div>
 					
 				</form> 
@@ -171,12 +137,12 @@
 <script type="text/javascript">
 
 
-/* $(document).ready(function() {	
+$(document).ready(function() {	
 	//alert("working");
     function disableBack() { window.history.forward() }
     window.onload = disableBack();
     window.onpageshow = function(evt) { if (evt.persisted) disableBack() }
-}); */
+});
 
 onsubmit = function(){
 	

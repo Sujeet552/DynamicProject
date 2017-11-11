@@ -3,6 +3,7 @@ package com.services;
 import java.util.List;
 
 import com.entities.AddStudentEntity;
+import com.entities.FeesEntity;
 import com.entities.Login;
 import com.entities.User;
 
@@ -17,7 +18,7 @@ public interface UserServices {
 
 	public void register(User user);
 	public boolean saveStudent(AddStudentEntity addStud);
-	
+	public boolean saveStudentFee(FeesEntity addFee);
 	
 	
 	public List<AddStudentEntity> NextEnrollmentNum();

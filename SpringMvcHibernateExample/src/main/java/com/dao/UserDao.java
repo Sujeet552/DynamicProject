@@ -1,5 +1,6 @@
 package com.dao;
 import com.entities.AddStudentEntity;
+import com.entities.FeesEntity;
 import com.entities.Login;
 import com.entities.User;
 import java.util.List;
@@ -13,6 +14,7 @@ public interface UserDao {
 
 	public void register(User user);
 	public boolean saveStudent(AddStudentEntity addStud);
+	public boolean saveStudentFee(FeesEntity addFee);
 	
 	public List<AddStudentEntity> NextEnrollmentNum();
 	public List<AddStudentEntity> listStudent();
